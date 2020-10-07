@@ -5,7 +5,7 @@ block content
     if locals.user
       h4 Bem Vindo, Você está logado!
       ul
-        each val in {connectedResult}
+        each val in connectedResult
           li= val.name
     else
       h4 Você não está logado! Por Favor #[a(href="/login") Entre ] para Continuar.
