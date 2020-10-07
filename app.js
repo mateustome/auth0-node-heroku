@@ -11,7 +11,7 @@ const userInViews = require('./lib/middleware/userInViews');
 const authRouter = require('./routes/auth');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const pg = require("pg"),
+
 
 dotenv.config();
 
@@ -47,19 +47,7 @@ const app = express();
 
 
 
-pg.defaults.ssl = true;
 
-var dbString = process.env.DATABASE_URL;
-
-var sharedPgClient;
-
-pg.connect(dbString, function(err,client){
-  if(err){
-      console.error("PG Connection Error")
-  }
-  console.log("Connected to Postgres");
-  sharedPgClient = client;
-});
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
