@@ -16,7 +16,7 @@ pg.connect(dbString, function(err,client){
 });
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  var query = "SELECT * FROM salesforce.contacts";
+  var query = "SELECT * FROM salesforce.contact";
   var result = [];
   sharedPgClient.query(query, function(err, result){
       console.log("Jobs Query Result Count: " + result.rows.length);
